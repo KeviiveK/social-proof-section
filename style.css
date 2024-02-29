@@ -1,0 +1,237 @@
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 0.9375rem;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.page {
+    padding: 3.5em 1.5em;
+    max-width: 1440px;
+    min-width: 280px;
+    background-image: url("./images/bg-pattern-top-mobile.svg"), url("./images/bg-pattern-bottom-mobile.svg");
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.container {
+    max-width: 60ch;
+    margin: 0 auto;
+}
+
+.introduction {
+    text-align: center;
+}
+
+.introduction__title {
+    font-size: 2.5em;
+    color: var(--very-dark-magenta);
+}
+
+.introduction__text {
+    margin-top: 1em;
+
+    font-size: 1.2em;
+    line-height: 1.2;
+    color: var(--dark-grayish-magenta);
+}
+
+.magazine-review {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    margin-top: 3em;
+}
+
+.magazine-review__item {
+    border-radius: 10px;
+    padding: 1em 0;
+    background-color: var(--light-grayish-magenta);
+
+    font-weight: 700;
+    text-align: center;
+    color: var(--very-dark-magenta);
+}
+
+.magazine-review__stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+
+    margin-bottom: 1em;
+}
+
+.user-review {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    margin-top: 3em;
+}
+
+.user-review__item {
+    border-radius: 10px;
+    padding: 3em;
+    background-color: var(--very-dark-magenta);
+
+    color: var(--white);
+}
+
+.user-review__user-image {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+
+    vertical-align: middle;
+}
+
+.user-review__user-info {
+    display: inline-block;
+
+    margin-left: 1em;
+
+    vertical-align: middle;
+}
+
+.user-review__user-name {
+    font-weight: 700;
+}
+
+.user-review__user-verified {
+    margin-top: 0.2em;
+
+    color: var(--soft-pink);
+}
+
+.user-review__quote {
+    margin-top: 2em;
+
+    line-height: 1.2;
+}
+
+.user-review__quote p::before {
+    content: '\201C';
+}
+
+.user-review__quote p::after {
+    content: '\201D';
+}
+
+.attribution {
+    margin-top: 1em;
+
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 376px) {
+    .page {
+        background-image: url("./images/bg-pattern-top-desktop.svg"), url("./images/bg-pattern-bottom-desktop.svg");
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .page {
+        display: grid;
+        place-content: center;
+
+        margin: 0 auto;
+        padding: 10em;
+        height: 100vh;
+    }
+
+    .container {
+        max-width: none;
+        margin: 0;
+    }
+
+    .wrapper {
+        display: flex;
+    }
+
+    .introduction {
+        flex: 1 1 0;
+
+        text-align: initial;
+    }
+
+    .introduction__title {
+        font-size: 3.5em;
+
+        max-width: 60%;
+    }
+
+    .introduction__text {
+        max-width: 40ch;
+    }
+
+    .magazine-review {
+        flex: 1 1 0;
+        justify-content: center;
+
+        margin: 0;
+    }
+
+    .magazine-review__item {
+        display: flex;
+        align-items: flex-end;
+        gap: 2em;
+
+        padding: 1.5em 2em;
+        width: 450px;
+    }
+
+    .magazine-review__item:nth-child(1) {
+        align-self: flex-start;
+    }
+
+    .magazine-review__item:nth-child(2) {
+        align-self: center;
+    }
+
+    .magazine-review__item:nth-child(3) {
+        align-self: flex-end;
+    }
+
+    .magazine-review__stars {
+        margin-bottom: 0;
+    }
+
+    .user-review {
+        margin-top: 5em;
+
+        flex-direction: row;
+    }
+
+    .user-review__item:nth-child(1) {
+        align-self: flex-start;
+    }
+
+    .user-review__item:nth-child(2) {
+        align-self: center;
+    }
+
+    .user-review__item:nth-child(3) {
+        align-self: flex-end;
+
+        margin-top: 2em;
+    }
+}
